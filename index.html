@@ -2,12 +2,106 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QuickPaperScissors</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: #fff;
+        overflow: hidden;
+      }
+
+      #root {
+        width: 90%;
+        max-width: 400px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        animation: fadeIn 1s ease;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 1rem;
+        opacity: 0.85;
+        margin-bottom: 10px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Optional floating particles for a subtle animated effect */
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        animation: float 6s infinite ease-in-out;
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .circle:nth-child(1) {
+        width: 80px;
+        height: 80px;
+        top: 10%;
+        left: 15%;
+        animation-delay: 0s;
+      }
+
+      .circle:nth-child(2) {
+        width: 100px;
+        height: 100px;
+        bottom: 20%;
+        right: 20%;
+        animation-delay: 2s;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <div id="root">
+      <h1>QuickPaperScissors</h1>
+      <p>Loading your game...</p>
+    </div>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
